@@ -19,7 +19,7 @@ export default function Home() {
   const [loaded, setLoaded] = useState(false);
 
   // get access token from localStorage
-  const token = localStorage.getItem("token");
+  const token = window?.localStorage?.getItem("token");
 
   const handleGetMaster = async (signal) => {
     try {
