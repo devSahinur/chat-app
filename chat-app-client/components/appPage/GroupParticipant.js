@@ -143,7 +143,7 @@ const GroupParticipant = () => {
             onTouchEnd={() => touchAndHoldEnd()}
           >
             <img
-              src={elem.avatar || 'assets/images/default-avatar.png'}
+              src={elem.avatar || '/default-avatar.png'}
               alt=""
               className="w-14 h-14 rounded-full"
             />

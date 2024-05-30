@@ -62,7 +62,7 @@ const Qr = () => {
             <div className="h-16 pl-4 pr-2 grid grid-cols-[1fr_auto] gap-4 items-center">
               <div className="flex gap-4 items-center overflow-hidden">
                 <img
-                  src={qr.avatar || 'assets/images/default-avatar.png'}
+                  src={qr.avatar || '/default-avatar.png'}
                   alt=""
                   className="w-10 h-10 rounded-full"
                 />

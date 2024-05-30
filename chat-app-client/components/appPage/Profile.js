@@ -191,7 +191,7 @@ const Profile = () => {
                 src={
                   refreshAvatar ||
                   profile.avatar ||
-                  'assets/images/default-avatar.png'
+                  '/default-avatar.png'
                 }
                 alt=""
                 className="w-full h-full"

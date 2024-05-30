@@ -106,7 +106,7 @@ const AddParticipant = () => {
                 >
                   <img
                     src={
-                      elem.profile.avatar || 'assets/images/default-avatar.png'
+                      elem.profile.avatar || '/default-avatar.png'
                     }
                     alt=""
                     className="w-14 h-14 rounded-full"
@@ -190,7 +190,7 @@ const AddParticipant = () => {
                 <span className="relative">
                   <img
                     src={
-                      elem.profile.avatar || 'assets/images/default-avatar.png'
+                      elem.profile.avatar || '/default-avatar.png'
                     }
                     alt=""
                     className="w-14 h-14 rounded-full"

@@ -7,6 +7,7 @@ import socket from '@/helpers/socket';
 import { setChatRoom } from '@/redux/features/room';
 import InboxMenu from '@/components/modals/InboxMenu';
 import { setModal } from '@/redux/features/modal';
+import notification from '@/helpers/notification';
 
 
 const Inbox = ({ inboxes, setInboxes }) => {
@@ -82,7 +83,7 @@ const Inbox = ({ inboxes, setInboxes }) => {
       const isNotSender = payload.content.from !== master._id;
 
       if (isNotSender && !setting.mute) {
-        const audio = new Audio('assets/sound/default-ringtone.mp3');
+        const audio = new Audio('/sound/default-ringtone.mp3');
         audio.volume = 1;
 
         audio.play();
@@ -147,7 +148,7 @@ const Inbox = ({ inboxes, setInboxes }) => {
                           ...elem,
                           profile: !profile
                             ? {
-                                avatar: 'assets/images/default-avatar.png',
+                                avatar: '/default-avatar.png',
                                 fullname: '[inactive]',
                                 updatedAt: new Date().toISOString(),
                                 active: false,
@@ -186,7 +187,7 @@ const Inbox = ({ inboxes, setInboxes }) => {
                 src={
                   elem.roomType === 'private'
                     ? elem.owners.find((x) => x.userId !== master._id)
-                        ?.avatar || 'assets/images/default-avatar.png'
+                        ?.avatar || '/default-avatar.png'
                     : elem.group.avatar ||
                       'assets/images/default-group-avatar.png'
                 }

@@ -2,9 +2,17 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import * as bi from 'react-icons/bi';
-import emojis from '../../../json/emojis.json';
+import emojis from './../../../public/emoji';
 
-const emojiBoard = () => {
+const EmojiBoard = ({setForm}) => {
+
+  const [category, setCategory] = useState('Smileys & Emotion');
+
+  useEffect(() => {
+    const monitor = document.querySelector('#monitor');
+    monitor.scrollTop += 192;
+  }, []);
+
   return (
     <div className="grid grid-rows-[1fr_auto]">
     <div
@@ -72,4 +80,4 @@ const emojiBoard = () => {
   )
 }
 
-export default emojiBoard
+export default EmojiBoard

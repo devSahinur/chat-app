@@ -186,7 +186,7 @@ const ConfirmNewGroup = () => {
                     <img
                       src={
                         elem.profile.avatar ||
-                        'assets/images/default-avatar.png'
+                        '/default-avatar.png'
                       }
                       alt=""
                       className="w-14 h-14 rounded-full"

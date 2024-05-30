@@ -12,7 +12,7 @@ import socket from '@/helpers/socket';
 import RoomHeaderMenu from '@/components/modals/RoomHeaderMenu';
 
 
-const header = () => {
+const Header = () => {
 
   const dispatch = useDispatch();
   const {
@@ -182,7 +182,7 @@ const header = () => {
                       chatRoom.data.group.avatar ||
                       'assets/images/default-group-avatar.png'
                     : chatRoom.data.profile.avatar ||
-                      'assets/images/default-avatar.png'
+                      '/default-avatar.png'
                 }
                 alt=""
                 className="w-10 h-10 rounded-full"
@@ -269,4 +269,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header

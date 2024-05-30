@@ -6,11 +6,14 @@ import * as md from 'react-icons/md';
 import { setSelectedChats } from '@/redux/features/chore';
 import socket from '@/helpers/socket';
 import config from '@/helpers/config';
-import FriendProfile from '@/components/appPage/friendProfile';
-import GroupProfile from '@/components/appPage/groupProfile';
-import GroupParticipant from '@/components/appPage/groupParticipant';
-import AddParticipant from '@/components/appPage/addParticipant';
 import { setPage } from '@/redux/features/page';
+import Header from '@/components/chat/room/Header';
+import Monitor from '@/components/chat/room/Monitor';
+import Send from '@/components/chat/room/Send';
+import GroupProfile from '@/components/appPage/GroupProfile';
+import FriendProfile from '@/components/appPage/FriendProfile';
+import AddParticipant from '@/components/appPage/AddParticipant';
+import GroupParticipant from '@/components/appPage/GroupParticipant';
 
 const Room = () => {
 
@@ -120,22 +123,23 @@ const Room = () => {
               '-translate-x-full sm:translate-x-0 xl:mr-[380px]'
             } transition-all w-full h-full grid grid-rows-[auto_1fr_auto] overflow-hidden`}
           >
-            <comp.header />
-            <comp.monitor
-              newMessage={newMessage}
-              setNewMessage={setNewMessage}
-              chats={chats}
-              setChats={setChats}
-              control={control}
-              setControl={setControl}
-              loaded={loaded}
-            />
-            <comp.send
+             <Header />
+             <Monitor
+             newMessage={newMessage}
+             setNewMessage={setNewMessage}
+             chats={chats}
+             setChats={setChats}
+             control={control}
+             setControl={setControl}
+             loaded={loaded}
+           />
+           <Send
               setChats={setChats}
               setNewMessage={setNewMessage}
               control={control}
             />
           </div>
+
           <GroupProfile />
           <FriendProfile />
           <GroupParticipant />

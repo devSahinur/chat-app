@@ -46,7 +46,7 @@ const Chat = () => {
   return (
     <div
     aria-hidden
-    className="absolute w-full h-full overflow-hidden grid md:grid-cols-[380px_1fr] "
+    className="absolute w-full h-full overflow-hidden grid md:grid-cols-[380px_1fr]  dark:text-white/90"
     onClick={() => {
       // close all modals
       dispatch(setModal({ target: '*' }));
