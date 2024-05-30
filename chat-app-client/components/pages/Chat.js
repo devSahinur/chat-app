@@ -52,7 +52,6 @@ const Chat = () => {
       dispatch(setModal({ target: '*' }));
     }}
   >
-    <h1 className="">Chat</h1>
     <Signout />
     <ChangePass />
     <DeleteAcc />

@@ -3,14 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import * as bi from 'react-icons/bi';
-import Contact from '@/components/appPage/contact';
 import Setting from '@/components/appPage/Setting';
 import Profile from '@/components/appPage/Profile';
-import NewGroup from '@/components/appPage/newGroup';
 import Minibox from '@/components/chat/foreground/Minibox';
 import OpenContact from '@/components/chat/foreground/OpenContact';
 import Header from '@/components/chat/foreground/Header';
 import Inbox from '@/components/chat/foreground/Inbox';
+import Contact from '@/components/appPage/Contact';
 
 
 const Foreground = () => {
@@ -66,8 +65,8 @@ const Foreground = () => {
     {/* app Page in component */}
     <Setting/>
     <Contact />
-    <Profile />
-    <NewGroup />
+    {/* <Profile /> */}
+    {/* <NewGroup /> */}
 
   {/* components foreground */}
     <Minibox />
