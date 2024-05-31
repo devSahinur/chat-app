@@ -10,6 +10,7 @@ import OpenContact from '@/components/chat/foreground/OpenContact';
 import Header from '@/components/chat/foreground/Header';
 import Inbox from '@/components/chat/foreground/Inbox';
 import Contact from '@/components/appPage/Contact';
+import NewGroup from '@/components/appPage/NewGroup';
 
 
 const Foreground = () => {
@@ -65,8 +66,8 @@ const Foreground = () => {
     {/* app Page in component */}
     <Setting/>
     <Contact />
-    {/* <Profile /> */}
-    {/* <NewGroup /> */}
+    <Profile />
+    <NewGroup />
 
   {/* components foreground */}
     <Minibox />

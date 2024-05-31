@@ -10,6 +10,7 @@ import { getSetting } from "@/services/setting.api";
 import { setMaster, setSetting } from "@/redux/features/user";
 import Auth from "@/components/pages/Auth";
 import Chat from "@/components/pages/Chat";
+import Verify from "@/components/pages/Verify";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -84,7 +85,7 @@ export default function Home() {
         <>
           {inactive && <Inactive />}
           {!inactive && master ? (
-            <>{master.verified ? <Chat /> : <h1>veryfy</h1>}</>
+            <>{master.verified ? <Chat /> : <Verify />}</>
           ) : (
             <Auth />
           )}
