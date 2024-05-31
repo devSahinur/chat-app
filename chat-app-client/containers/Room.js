@@ -3,17 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import * as md from 'react-icons/md';
-import { setSelectedChats } from '@/redux/features/chore';
-import socket from '@/helpers/socket';
-import config from '@/helpers/config';
 import { setPage } from '@/redux/features/page';
+import { setSelectedChats } from '@/redux/features/chore';
 import Header from '@/components/chat/room/Header';
 import Monitor from '@/components/chat/room/Monitor';
 import Send from '@/components/chat/room/Send';
 import GroupProfile from '@/components/appPage/GroupProfile';
 import FriendProfile from '@/components/appPage/FriendProfile';
-import AddParticipant from '@/components/appPage/AddParticipant';
 import GroupParticipant from '@/components/appPage/GroupParticipant';
+import AddParticipant from '@/components/appPage/AddParticipant';
+import config from '@/helpers/config';
+import socket from '@/helpers/socket';
+
+
 
 const Room = () => {
 
@@ -105,62 +107,62 @@ const Room = () => {
   }, []);
 
 
-
   return (
    
     <div
-      className={`
-        ${!chatRoom.data && 'translate-x-full md:translate-x-0'}
-        transition absolute md:relative flex z-10 w-full h-full overflow-hidden
-        bg-spill-100 dark:bg-spill-950
-      `}
-    >
-      {chatRoom.data && (
-        <>
-          <div
-            className={`${
-              (page.groupProfile || page.friendProfile) &&
-              '-translate-x-full sm:translate-x-0 xl:mr-[380px]'
-            } transition-all w-full h-full grid grid-rows-[auto_1fr_auto] overflow-hidden`}
-          >
-             <Header />
-             <Monitor
-             newMessage={newMessage}
-             setNewMessage={setNewMessage}
-             chats={chats}
-             setChats={setChats}
-             control={control}
-             setControl={setControl}
-             loaded={loaded}
-           />
-           <Send
-              setChats={setChats}
-              setNewMessage={setNewMessage}
-              control={control}
-            />
-          </div>
-
-          <GroupProfile />
-          <FriendProfile />
-          <GroupParticipant />
-          <AddParticipant />
-        </>
-      )}
-      {!chatRoom.data && (
-        <div className="w-full h-full flex justify-center items-center">
-          <div className="w-[400px] flex flex-col items-center">
-            <i className="opacity-40">
-              <md.MdDevices size={140} />
-            </i>
-            <p className="mt-4 opacity-60 text-center">
-              {'You can use '}
-              {config.brandName}
-              {' on other devices such as desktop, tablet, and mobile phone.'}
-            </p>
-          </div>
+    className={`
+      ${!chatRoom.data && 'translate-x-full md:translate-x-0'}
+      transition absolute md:relative flex z-10 w-full h-full overflow-hidden
+      bg-spill-100 dark:bg-spill-950
+    `}
+  >
+    {chatRoom.data && (
+      <>
+        <div
+          className={`${
+            (page.groupProfile || page.friendProfile) &&
+            '-translate-x-full sm:translate-x-0 xl:mr-[380px]'
+          } transition-all w-full h-full grid grid-rows-[auto_1fr_auto] overflow-hidden`}
+        >
+          <Header />
+          <Monitor
+          
+          newMessage={newMessage}
+          setNewMessage={setNewMessage}
+          chats={chats}
+          setChats={setChats}
+          control={control}
+          setControl={setControl}
+          loaded={loaded}
+          />
+        <Send 
+         setChats={setChats}
+         setNewMessage={setNewMessage}
+         control={control}
+        />
+  
         </div>
-      )}
-    </div>
+        <GroupProfile />
+        <FriendProfile />
+        <GroupParticipant />
+        <AddParticipant />
+      </>
+    )}
+    {!chatRoom.data && (
+      <div className="w-full h-full flex justify-center items-center">
+        <div className="w-[400px] flex flex-col items-center">
+          <i className="opacity-40">
+            <md.MdDevices size={140} />
+          </i>
+          <p className="mt-4 opacity-60 text-center">
+            {'You can use '}
+            {config.brandName}
+            {' on other devices such as desktop, tablet, and mobile phone.'}
+          </p>
+        </div>
+      </div>
+    )}
+  </div>
   )
 }
 

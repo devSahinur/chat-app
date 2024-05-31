@@ -190,7 +190,7 @@ const Inbox = ({ inboxes, setInboxes }) => {
                     ? elem.owners.find((x) => x.userId !== master._id)
                         ?.avatar || '/default-avatar.png'
                     : elem.group.avatar ||
-                      'assets/images/default-group-avatar.png'
+                      '/default-group-avatar.png'
                 }
                 alt=""
                 className="w-14 h-14 rounded-full"

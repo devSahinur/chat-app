@@ -251,7 +251,7 @@ const GroupProfile = () => {
                       target: 'photoFull',
                       data:
                         group.avatar ||
-                        'assets/images/default-group-avatar.png',
+                        '/default-group-avatar.png',
                     })
                   );
                 } else {
@@ -278,7 +278,7 @@ const GroupProfile = () => {
                 src={
                   refreshGroupAvatar ||
                   group.avatar ||
-                  'assets/images/default-group-avatar.png'
+                  '/default-group-avatar.png'
                 }
                 alt=""
                 className="w-full h-full"

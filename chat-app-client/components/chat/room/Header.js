@@ -180,7 +180,7 @@ const Header = () => {
                   isGroup
                     ? refreshGroupAvatar ||
                       chatRoom.data.group.avatar ||
-                      'assets/images/default-group-avatar.png'
+                      '/default-group-avatar.png'
                     : chatRoom.data.profile.avatar ||
                       '/default-avatar.png'
                 }
